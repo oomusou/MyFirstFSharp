@@ -11,8 +11,7 @@ let main argv =
     let func values =
         values 
         |> List.filter isOdd
-        |> List.map square
-        |> List.map addOne
+        |> List.map(fun x -> x |> square |> addOne)
         
     printfn "%A" (func numbers)
     
