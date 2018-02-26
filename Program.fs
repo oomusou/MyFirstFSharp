@@ -9,10 +9,10 @@ let main argv =
     let addOne x = x + 1
     
     let func values =
-        let odds = List.filter isOdd values
-        let squares = List.map square odds
-        let result = List.map addOne squares
-        result
+        values 
+        |> List.filter isOdd
+        |> List.map square
+        |> List.map addOne
         
     printfn "%A" (func numbers)
     
