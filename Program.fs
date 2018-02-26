@@ -8,11 +8,8 @@ let main argv =
     let square x = x * x
     let addOne x = x + 1
     
-    let func values =
-        values 
-        |> List.filter isOdd
-        |> List.map(fun x -> x |> square |> addOne)
-        
+    let func = List.filter isOdd  >> List.map(square >> addOne)
+    
     printfn "%A" (func numbers)
     
     0
